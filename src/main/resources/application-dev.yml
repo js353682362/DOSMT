@@ -1,0 +1,11 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: test
+com:
+  jsen:
+    name: jiaosen
+com:
+  jsen:
+    password: 123
