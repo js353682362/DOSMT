@@ -12,4 +12,10 @@
     <select id="getUser" resultMap="userResult">
         select * from sys_user
     </select>
+
+    <!-- 开启本mapper的namespace下的二缓存
+        type：指定cache接口的实现类的类型，mybatis默认使用PerpetualCache
+        要和ehcache整合，需要配置type为ehcache实现cache接口的类型
+     -->
+    <!--<cache/>-->
 </mapper>

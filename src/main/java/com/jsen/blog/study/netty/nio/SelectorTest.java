@@ -41,10 +41,14 @@ public class SelectorTest {
     /**
      *
      * 创建 ServerSocketChannel 和业务处理线程池。
+     *
      * 绑定监听端口，并配置为非阻塞模式。
+     *
      * 创建 Selector，将之前创建的 ServerSocketChannel 注册到 Selector 上，监听 SelectionKey.OP_ACCEPT。
+     *
      * 循环执行 Selector.select() 方法，轮询就绪的 Channel。 轮询就绪的 Channel 时，如果是处于 OP_ACCEPT 状态，
      *   说明是新的客户端接入，调用 ServerSocketChannel.accept 接收新的客户端。
+     *
      * 设置新接入的 SocketChannel为非阻塞模式，并注册到 Selector 上，监听 OP_READ。
      * 如果轮询的 Channel 状态是 OP_READ，说明有新的就绪数据包需要读取，则构造 ByteBuffer 对象，读取数据。
      * 

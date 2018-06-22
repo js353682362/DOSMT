@@ -1,5 +1,6 @@
 package com.jsen.blog;
 
+import com.jsen.blog.study.listener.RedisTestListener;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +22,11 @@ public class BlogApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(BlogApplication.class, args);
+        SpringApplication springApplication = new SpringApplication(BlogApplication.class);
+        springApplication.addListeners(new RedisTestListener());
+        springApplication.run(args);
+
+//        SpringApplication.run(BlogApplication.class,args);
     }
 
     /**

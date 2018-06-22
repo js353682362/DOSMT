@@ -9,3 +9,6 @@ spring:
       jmx-name: org.springframework.boot:type=Admin,name=SpringApplication
   profiles:
     active: dev
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/**/*.xml
+  type-aliases-package: com.jsen.blog.study.mybatis
